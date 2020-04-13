@@ -1,0 +1,23 @@
+{
+  "name": "modulo01_boas_praticas",
+  "version": "1.0.0",
+  "description": "Biblioteca do curso de JS com TDD na prática.",
+  "main": "index.js",
+  "repository": "https://github.com/yago-codev/js-tdd.git",
+  "author": "Yago Milano (https://github.com/yago-codev)",
+  "license": "MIT",
+  "scripts": {
+    "eslint:errors": "yarn eslint *.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn eslint:errors"
+    }
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "husky": "^4.2.5"
+  }
+}

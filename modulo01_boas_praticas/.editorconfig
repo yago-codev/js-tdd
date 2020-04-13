@@ -1,0 +1,9 @@
+root = true  # vai funcionar para todos os editores
+
+[*] # vai funcionar em todas as extensões de arquivos, em todos os arquivos do projeto
+indent_style = space # a indentação será definida por espaços
+indent_size = 2 # dois espaços para a indentação
+charset = utf-8 # utilizaremos o charset utf-8 que permitirá acentuação
+trim_trailing_whitespace = true # vai remover os espaços no final das linhas após o último caractere
+insert_final_newline = true # vai inserir uma linha em branco depois da úlima linha de código
+end_of_line = lf # vai fazer com que o fim de linha esteja no padrão linux/unix
