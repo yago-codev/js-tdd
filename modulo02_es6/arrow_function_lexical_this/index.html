@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn1" type="button">
+      Botão Function Normal
+    </button>
+
+    <button type="button" id="btn2">
+      Botão Arrow Function
+    </button>
+
+    <button type="button" id="sandwich">
+      Make my sandwich Normal Function
+    </button>
+
+    <button type="button" id="sandwichArrow">
+      Make my sandwich Arrow Function
+    </button>
+
+    <script>
+      const sandwichNormalFunction = {
+        bread: "white",
+        cheese: "cheddar",
+
+        prepare: function () {
+          return `I want a sandwich with ${this.bread} bread and ${this.cheese}`;
+        },
+
+        make: function () {
+          var that = this; // "criando variável gambiarra para pegar o this no contexto do objeto"
+
+          window.setTimeout(function () {
+            console.log(that.prepare());
+          }, 500);
+        },
+      };
+
+      const btnSandwich = document.getElementById("sandwich");
+
+      btnSandwich.addEventListener("click", function () {
+        sandwichNormalFunction.make();
+      });
+
+      const sandwichArrowFunction = {
+        bread: "white",
+        cheese: "cheddar",
+
+        prepare: () =>
+          `I want a sandwich with ${this.bread} bread and ${this.cheese}`,
+
+        make: () => {
+          window.setTimeout(function () {
+            console.log(this.prepare());
+          }, 500);
+        },
+      };
+
+      const btnSandwichArrow = document.getElementById("sandwichArrow");
+
+      btnSandwichArrow.addEventListener("click", () =>
+        sandwichNormalFunction.make()
+      );
+
+      const btn1 = document.getElementById("btn1");
+
+      btn1.addEventListener("click", function () {
+        console.log(this); // dentro de funções normais o this aponta para o contexto, considerando quem está evocando a função
+      });
+
+      const btn2 = document.getElementById("btn2");
+
+      btn2.addEventListener("click", () => console.log(this)); // na arrow function o this aponta pro objeto global (window)
+    </script>
+  </body>
+</html>
