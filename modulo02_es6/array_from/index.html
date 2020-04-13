@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li>Nome1</li>
+      <li>Nome2</li>
+      <li>Nome3</li>
+    </ul>
+
+    <script>
+      const list = document.querySelectorAll("#list li");
+
+      const listArray = Array.from(list);
+
+      // se selecionarmos alguns <li> somente com o querySelectorAll, será retornado um NodeList
+      // através do NodeList não é possível utilizar todos os métodos para tratamento de array.
+      console.log(list);
+      // ao utilizarmos o protorype de Array, utiizando o método from para transformar os <li>,
+      // iremos obter um array, tendo acesso a todos os seus métodos
+      console.log(listArray);
+
+      const names = listArray.map((nome) => nome.textContent);
+
+      console.log(names);
+    </script>
+  </body>
+</html>
